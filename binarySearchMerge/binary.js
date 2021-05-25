@@ -33,3 +33,21 @@ var arr = [ 12, 11, 13, 5, 6, 7 ];
 // mergeSort(arr, 0, arr.length - 1);
 // console.log(arr);
 console.log(binarySearch(mergeSort(arr, 0, arr.length - 1), 11));
+var movies = [
+    "ACADEMY DINOSAUR",
+    "ACE GOLDFINGER",
+    "ADAPTATION HOLES",
+    "AFFAIR PREJUDICE",
+    "BENEATH RUSH",
+    "BERETS AGENT",
+    "BETRAYED REAR",
+    "BEVERLY OUTLAW",
+    "BIKINI BORROWERS",
+    "YENTL IDAHO",
+    "YOUNG LANGUAGE",
+    "YOUTH KICK",
+    "ZHIVAGO CORE",
+    "ZOOLANDER FICTION",
+    "ZORRO ARK"
+];
+console.log(binarySearch(movies, "BIKINI BORROWERS"));
