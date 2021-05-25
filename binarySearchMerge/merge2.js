@@ -48,9 +48,10 @@ export function mergeSort(arr,lb, ub){
 	mergeSort(arr,lb,m);
 	mergeSort(arr,m+1,ub);
 	merge(arr,lb,m,ub);
+	return arr;
 }
 
 
 var arr = [ 12, 11, 13, 5, 6, 7 ];
-mergeSort(arr, 0, arr.length - 1);
-console.log(arr);
+// mergeSort(arr, 0, arr.length - 1);
+console.log(mergeSort(arr, 0, arr.length - 1));
