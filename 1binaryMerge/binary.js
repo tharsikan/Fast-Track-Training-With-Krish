@@ -1,4 +1,4 @@
-import {mergeSort} from './merge2';
+import {mergeSort} from './merge';
 // function binarySearch(arr, length, data){
 //     let l =0; 
 //     let r = length-1; 
@@ -30,7 +30,7 @@ function binarySearch(sortedArray, data){
     return -1;
 }
 var arr = [ 12, 11, 13, 5, 6, 7 ];
-console.log(binarySearch(mergeSort(arr, 0, arr.length - 1), 11));
+console.log("11 found at " + binarySearch(mergeSort(arr, 0, arr.length - 1), 11));
 var movies = [
     "ACADEMY DINOSAUR",
     "ACE GOLDFINGER",
@@ -48,4 +48,4 @@ var movies = [
     "ZOOLANDER FICTION",
     "ZORRO ARK"
 ];
-console.log(binarySearch(movies, "BIKINI BORROWERS"));
+console.log("'BIKINI BORROWERS' found at " + binarySearch(movies, "BIKINI BORROWERS"));
