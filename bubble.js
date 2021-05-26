@@ -15,29 +15,34 @@ for (let i =0; i< n-1; i++){
 }
 console.log(a);
 
-let b = ["tharsi", "thulasi"];
-let stTemp;
-let len;
-for (let i =0; i< n-1; i++){
-    for (let j = 0; j < n-1-i ; j++) {
-        // if(a[j]>a[j+1]){
-        //     temp = a[j];
-        //     a[j] = a[j+1];
-        //     a[j+1] = temp;
-        //     swaped = true;
-        // }
-        // if(typeof b[j] ==="string"){
-        len = (b[j].length > b[j+1].length)?  b[j+1].length : b[j].length;
-        for(let k=0; k<n; k++){  
-            if(b[j].charCodeAt(k)>b[j+1].charCodeAt(k)){
-                stTemp = b[j];
-                b[j] = b[j+1];
-                b[j+1] = stTemp;
-            }else if(b[j].charCodeAt(k)=b[j+1].charCodeAt(k)){
-                if(b[j].charCodeAt(1)=b[j+1].charCodeAt(1)){
 
-                }
-            }
+function swapWord(arr, i, k){
+    if(arr[i+1] && k<sortLen && i<arr.length-1){
+        sortLen = b[i].length > b[i+1].length?  b[i+1].length : b[i].length;
+        if(arr[i].charCodeAt(k) == arr[i+1].charCodeAt(k)){
+            // console.log("equal check next letters",i,k, arr[i], arr[i+1]);
+            k++;
         }
-    }
+        else if(arr[i].charCodeAt(k) > arr[i+1].charCodeAt(k)){
+            // console.log("swap need ",i,k, arr[i], arr[i+1]); 
+            temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp;
+            k=0; i++;
+        }
+        else{
+            // console.log("no swap need",i,k, arr[i], arr[i+1]); 
+            k=0; i++;
+        };
+        swapWord(arr,i,k);
+    }   
 }
+
+let b = ["Emily","Hannah","Madison","Ashley","Sarah","Alexis","Emily","Hannah","Madison","Samantha","Jessica","Elizabeth","Taylor"]
+let sortLen=0;
+for (let j =0; j< b.length-1; j++){
+    let  i =0, k = 0;
+    swapWord(b,k,i);
+}
+
+console.log(b);
