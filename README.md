@@ -1,2 +1,2 @@
-### RamingUpWithKrish
+### RampingUpWithKrish
 practice coding
