@@ -38,11 +38,11 @@ function swapWord(arr, i, k){
     }   
 }
 
-let b = ["Emily","Hannah","Madison","Ashley","Sarah","Alexis","Emily","Hannah","Madison","Samantha","Jessica","Elizabeth","Taylor"]
-let sortLen=0;
+let b = ["Emily","Hannah","Abcdzccaa","Abcdxbb","Abcdya","Madison","Ashley","Sarah","Alexis","Emily","Hannah","Madison","Samantha","Jessica","Elizabeth","Taylor"]
+let sortLen=3;
 for (let j =0; j< b.length-1; j++){
     let  i =0, k = 0;
-    swapWord(b,k,i);
+    swapWord(b,i,k);
 }
 
 console.log(b);
