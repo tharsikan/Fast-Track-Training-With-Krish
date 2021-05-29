@@ -1,0 +1,12 @@
+{
+  "name": "find-anagram",
+  "version": "1.0.0",
+  "description": "find word is anagram to source word",
+  "main": "anagram.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node anagram.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "find-third-large-number",
+  "version": "1.0.0",
+  "description": "find the third large number in a array",
+  "main": "thirdLarge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node thirdLarge.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

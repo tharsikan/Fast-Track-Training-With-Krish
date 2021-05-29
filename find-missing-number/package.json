@@ -1,0 +1,12 @@
+{
+  "name": "find-missing-number",
+  "version": "1.0.0",
+  "description": "find the missing number in a sequence",
+  "main": "missingNumber.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node missingNumber.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
