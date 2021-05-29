@@ -1,4 +1,4 @@
-let sent = "ata tajd ddma kama";
+let sent = "I'm Studying These Days.";
 // for (const c of sent) {
 //     console.log(c);
 // }
@@ -9,10 +9,10 @@ let count;
     
     
 function counter(ar){
-    key = ar[0];
+    key = ar[0].toLowerCase();
     count = 1;
     for (let j = 1; j < ar.length; j++) {
-        if(key == ar[j]){
+        if(key == ar[j].toLowerCase()){
             count++;
             ar.splice(j,1);
         }
