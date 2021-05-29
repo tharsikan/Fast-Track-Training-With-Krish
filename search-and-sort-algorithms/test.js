@@ -1,4 +1,9 @@
-import {bubbleSort, bubbleSortString} from './bubble.js';
+import {bubbleSort, bubbleSortString} from './bubble';
+import {insertionSort} from './insertion';
+import {selectionSort} from './selection';
+import {quickSort} from './quick';
+import {mergeSort} from './merge2';
+
 
 
 function addQuestionToDom(headding,data,cb){
@@ -9,7 +14,11 @@ function addQuestionToDom(headding,data,cb){
     const p2 = document.createElement('p');
     const text = document.createTextNode(headding);
     const input = document.createTextNode(`the input data: ${data}`);
-    const output = document.createTextNode(`the result : ${cb(data)}`);
+    let output = document.createTextNode(`the result : ${cb(data)}`);
+    if (headding == 'Quick Sort' ||headding == 'Merge Sort'){
+        cb(data,0,data.length-1);
+        output = document.createTextNode(`the result : ${data}`);
+    }; 
     head.appendChild(text);
     p1.appendChild(input);
     p2.appendChild(output);
@@ -20,8 +29,13 @@ function addQuestionToDom(headding,data,cb){
     document.querySelector('#myDiv')
     .appendChild(div);
 }
-addQuestionToDom('Bubble Sort',[15, 16, 6, 8, 5],bubbleSort);
-let stringArr = ["Emily","Hannah","Abcdzccaa","Abcdxbb","Abcdya","Madison","Ashley","Sarah","Alexis","Emily","Hannah","Madison","Samantha","Jessica","Elizabeth","Taylor"];
-addQuestionToDom('Bubble Sort',stringArr,bubbleSortString);
-addQuestionToDom('Bubble Sort',stringArr,bubbleSortString);
-addQuestionToDom('Bubble Sort',stringArr,bubbleSortString);
+const numArr = [7, 6, 10, 5, 9, 2,  1, 15, 7];
+const nums = [ 12, 11, 13];
+const stringArr = ["Emily","Hannah","Abcdzccaa","Abcdxbb","Abcdya","Madison","Ashley","Sarah","Alexis","Emily","Hannah","Madison","Samantha","Jessica","Taylor"];
+
+addQuestionToDom('Bubble Sort',[...numArr],bubbleSort);
+addQuestionToDom('Bubble Sort String',[...stringArr],bubbleSortString);
+addQuestionToDom('Insertion Sort',[...numArr],insertionSort);
+addQuestionToDom('Selection Sort',[...numArr],selectionSort);
+addQuestionToDom('Quick Sort',[...numArr],quickSort);
+addQuestionToDom('Merge Sort',[...nums],mergeSort);

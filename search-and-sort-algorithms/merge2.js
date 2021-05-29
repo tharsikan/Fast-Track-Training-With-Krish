@@ -39,7 +39,7 @@ function merge(arr, lb, mid, ub)
 	}
 }
 
-export function mergeSort(arr,lb, ub){
+function mergeSort(arr,lb, ub){
 	if(lb>=ub){
 		return;
 	}
@@ -51,6 +51,7 @@ export function mergeSort(arr,lb, ub){
 }
 
 
-var arr = [ 12, 11, 13, 5, 6, 7 ];
-mergeSort(arr, 0, arr.length - 1);
-console.log(arr);
+// var arr = [ 12, 11, 13, 5, 6, 7 ];
+// mergeSort(arr, 0, arr.length - 1);
+// console.log(arr);
+export {mergeSort};
