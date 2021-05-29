@@ -1,35 +1,45 @@
-let a = [15, 16, 6, 8, 5];
-let temp;
 // modified bubble sort
 // bubbleUp three times... get a[a.length-3]
 class ThirdLargeAlgo{
-    #array = [];
+    #array;
     constructor(array){
         if(array.length>3 && typeof array === 'object') 
         {
             this.#array = array;
         }
         else{
-            throw 'array should have at least 3 numbers';            // _array like private variable (encapsulation)
-        }                                   // can only accessed by get/ set (thirdLarge.array is not here to access it :)
+            throw 'array should have at least 3 numbers';            
+        }                                   
     }
-    static #thirdLarge(){           // static private common to all instance & not access to outside
-        let n = ThirdLargeAlgo.#array.length;
+    // _array like private variable (encapsulation)
+    // can only accessed by get/ set (thirdLarge.array is not here to access it :)
+    // ... old way to private 
+
+
+    // static private common to all instance & not access to outside
+    // dont need to copy code to all instance, can't access outside class
+    static #thirdLargeAlgo(){           
+        let n = this.#array.length;
+        let swaped = false;
+        let temp;
         for (let i =0; i< 3; i++){  
             for (let j = 0; j < n-1-i ; j++) {    
-                if(array[j]>array[j+1]){
-                    temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
+                if(this.#array[j]>this.#array[j+1]){
+                    temp = this.#array[j];
+                    this.#array[j] = this.#array[j+1];
+                    this.#array[j+1] = temp;
                     swaped = true;
                 }
             }
         }
+        return this.#array[this.#array.length-3];
+
     }
 
-    get array(){                            // thirdLargeAlgo.array
-        ThirdLargeAlgo.#thirdLarge();
-        return this.#array;
+    get thirdLarge(){                            // thirdLargeAlgo.array
+        // this.thirdLarge();
+        let num = ThirdLargeAlgo.#thirdLargeAlgo.call(this);
+        return num;
     }
     set array(array){                            // thirdLargeAlgo.array = [4, 14, 4]
         if(array.length>3 && typeof array === 'object') {
@@ -43,11 +53,10 @@ class ThirdLargeAlgo{
 
 try {
     let thirdLargeAlgo = new ThirdLargeAlgo([2,5,6,4]);
-    console.log(thirdLargeAlgo.array);
-    // thirdLargeAlgo.array=[34,65];
-    // console.log(thirdLargeAlgo.#array);
+    // console.log(ThirdLargeAlgo.thirdLarge());
+    console.log(thirdLargeAlgo.thirdLarge);
+    //console.log(ThirdLargeAlgo.thirdLarge.call(thirdLargeAlgo)); 
+    
 } catch (error) {
     console.log(error);
 }
-
-// console.log(a[a.length-3]);
