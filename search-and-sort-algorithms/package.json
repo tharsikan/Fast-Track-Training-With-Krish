@@ -5,7 +5,13 @@
   "main": "test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node test.js"
+    "build": "webpack-dev-server --entry ./test.js --output-filename ./dist/bundle.js"
+  },
+  "devDependencies": {
+    "webpack": "2.2.0-rc.3",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "2.1.0-beta.0",
+    "webpack-validator": "^2.3.0"
   },
   "author": "",
   "license": "ISC"
