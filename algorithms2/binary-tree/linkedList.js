@@ -11,7 +11,7 @@ class LinkedList {
     insert(data, index){
         if(Array.isArray(data)){
             data.forEach(element => {
-                this.insert(element);
+                this.insert(element, index++);
             });
         }else{
             let newNode = new Node(data);
@@ -103,6 +103,7 @@ list.insert(14);
 list.insert(11);
 list.insert([12,23,34,45,65,67]);
 list.insert(99,4);
+list.insert([99,7,9],4);
 console.log(JSON.stringify(list));
 list.deleteByKey(34);
 list.deleteByKey(12);
