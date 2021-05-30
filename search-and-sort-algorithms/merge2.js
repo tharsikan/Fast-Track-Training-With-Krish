@@ -44,14 +44,9 @@ function mergeSort(arr,lb, ub){
 		return;
 	}
     var m =lb+ parseInt((ub-lb)/2);
-	// var m =Math.flboor((ub + lb) / 2);
 	mergeSort(arr,lb,m);
 	mergeSort(arr,m+1,ub);
 	merge(arr,lb,m,ub);
 }
 
-
-// var arr = [ 12, 11, 13, 5, 6, 7 ];
-// mergeSort(arr, 0, arr.length - 1);
-// console.log(arr);
 export {mergeSort};

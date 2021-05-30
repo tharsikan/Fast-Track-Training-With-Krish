@@ -1,7 +1,4 @@
 let sent = "I'm Studying These Days.";
-// for (const c of sent) {
-//     console.log(c);
-// }
 let ar = [...sent];
 let obj = {};
 let key;
@@ -18,7 +15,6 @@ function counter(ar){
         }
     }
     ar.shift();
-    // console.log(key + " appears " + count);
     obj[key] = count;
 }
 while(ar.length>0){

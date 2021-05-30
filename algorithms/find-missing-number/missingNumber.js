@@ -1,10 +1,7 @@
-// modified selection sort
-// if next minimum number's diffeent is != 1
-// assumed only one missing number
 let a = [7, 4, 10, 8, 2, 1, 3, 5];
 let minIndx, n = a.length;
 Array.prototype.swap = function (x,y) {
-    var b = this[x];        // this refers Array instant (a)
+    var b = this[x];        
     this[x] = this[y];
     this[y] = b;
     return this;

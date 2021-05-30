@@ -1,9 +1,5 @@
 let subject = 'apple Come';
 let anagram = 'People cam';
-// use letteters exactly once
-// 1. letter count not mutch, sum of assci not mutch ==> not annagram
-// 2. use the letter count .. then compare objects.
-
 
 function counter(ar,obj){
     key = ar[0].toLowerCase();
@@ -53,8 +49,6 @@ function checkAnagram(str1, str2){
     while(arr2.length>0){
         counter(arr2,obj2);
     }
-    // console.log(obj1);
-    // console.log(obj2);
     return shallowEqual(obj1, obj1); 
 }
 function shallowEqual(object1, object2) {

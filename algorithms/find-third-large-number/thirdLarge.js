@@ -1,5 +1,3 @@
-// modified bubble sort
-// bubbleUp three times... get a[a.length-3]
 class ThirdLargeAlgo{
     #array;
     constructor(array){
@@ -11,13 +9,6 @@ class ThirdLargeAlgo{
             throw 'array should have at least 3 numbers';            
         }                                   
     }
-    // _array like private variable (encapsulation)
-    // can only accessed by get/ set (thirdLarge.array is not here to access it :)
-    // ... old way to private 
-
-
-    // static private common to all instance & not access to outside
-    // dont need to copy code to all instance, can't access outside class
     static #thirdLargeAlgo(){           
         let n = this.#array.length;
         let swaped = false;
@@ -36,12 +27,11 @@ class ThirdLargeAlgo{
 
     }
 
-    get thirdLarge(){                            // thirdLargeAlgo.array
-        // this.thirdLarge();
+    get thirdLarge(){ 
         let num = ThirdLargeAlgo.#thirdLargeAlgo.call(this);
         return num;
     }
-    set array(array){                            // thirdLargeAlgo.array = [4, 14, 4]
+    set array(array){
         if(array.length>3 && typeof array === 'object') {
             this.#array = array;
         }
@@ -53,9 +43,7 @@ class ThirdLargeAlgo{
 
 try {
     let thirdLargeAlgo = new ThirdLargeAlgo([2,5,6,4]);
-    // console.log(ThirdLargeAlgo.thirdLarge());
     console.log(thirdLargeAlgo.thirdLarge);
-    //console.log(ThirdLargeAlgo.thirdLarge.call(thirdLargeAlgo)); 
     
 } catch (error) {
     console.log(error);

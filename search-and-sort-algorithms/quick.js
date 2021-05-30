@@ -34,4 +34,3 @@ function quickSort(array, lb, ub) {
 }
 quickSort(a, 0, a.length-1);
 export {quickSort};
-// console.log(a);
