@@ -1,3 +1,4 @@
+require("dotenv").config({ path: './../.env' }); 
 class Node{
 	constructor(data){
 		this.data = data;
@@ -127,17 +128,11 @@ class BinarySearchTree{
 
 }
 var bst = new BinarySearchTree();
-bst.insert(15);
-bst.insert(25);
-bst.insert(10);
-bst.insert(7);
-bst.insert(22);
-bst.insert(17);
-bst.insert(13);
-bst.insert(5);
-bst.insert(9);
-bst.insert(27);
-console.log(bst);
+const stringArray = process.env.NUMBERS.split(' ');
+stringArray.forEach(number => {
+    bst.insert(+number);
+});
+
 var root = bst.getRootNode();
 bst.inorder(root);
 
