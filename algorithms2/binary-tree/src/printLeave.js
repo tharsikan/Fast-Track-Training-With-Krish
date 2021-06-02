@@ -7,7 +7,7 @@ export class PrintLeafNodes extends BinarySearchTree{
        
         if (root.left == null &&
             root.right == null){
-            System.out.print(root.data + " ");
+            console.log(root.data + " ");
             return;
         }
     
