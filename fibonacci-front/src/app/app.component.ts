@@ -13,6 +13,7 @@ export class AppComponent {
 
   clickme() {
     this.result = `${this.number} is ${this.isFibonacci(+this.number) ? 'fibonacii' : 'not a fibonacii'} and ${this.number}'th fibonacci is ${this.fib(+this.number)}`;
+    this.fibb(+this.number);
   }
 
   isPerfectSquare( x: number){
@@ -31,5 +32,15 @@ export class AppComponent {
         return n;
     }
     return this.fib(n - 1) + this.fib(n - 2);
+  }
+  fibb(n: number) {
+    let firstSum = 0, secoundSum = 1, nextSum = 0, temp=0;
+    for(let i=0; i <= n; i++) {
+      temp = firstSum;
+      nextSum = firstSum + secoundSum;
+      firstSum = secoundSum;
+      secoundSum = nextSum;
+    }
+    return temp;
   }
 }
