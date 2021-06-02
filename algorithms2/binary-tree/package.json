@@ -1,14 +1,28 @@
 {
   "name": "binary-tree",
   "version": "1.0.0",
-  "description": "binart tree algorithm",
-  "main": "binarySearchTree.js",
+  "description": "practice coding",
+  "main": "src/test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack-dev-server --entry ./src/test.js --output-filename ./dist/bundle.js"
   },
+  "devDependencies": {
+    "webpack": "2.2.0-rc.3",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "2.1.0-beta.0",
+    "webpack-validator": "^2.3.0",
+    "dotenv": "^10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tharsikan/RankingUpWithKrish.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^10.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/tharsikan/RankingUpWithKrish/issues"
+  },
+  "homepage": "https://github.com/tharsikan/RankingUpWithKrish#readme"
 }
