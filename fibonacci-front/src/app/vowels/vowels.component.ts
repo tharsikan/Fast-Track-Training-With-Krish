@@ -37,8 +37,14 @@ export class VowelsComponent implements OnInit {
       i = 0; pushed = false;
       pushVowelWord(word);
     });
-    const collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
-    return vowelWords.sort(collator.compare);
+    return vowelWords.sort(this.compare);
+  }
+  compare( a: string, b: string ): number {
+    try {
+      return( a.localeCompare( b, undefined, { numeric: true } ) );
+    } catch ( error ) {
+      return( a.localeCompare( b ) );
+    }
   }
   counter(wordArray: string[]): Map<string, number>{
     const mapAllRepition = new Map();
