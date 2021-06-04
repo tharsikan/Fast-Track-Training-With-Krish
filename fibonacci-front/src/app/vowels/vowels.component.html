@@ -1,0 +1,27 @@
+<h3>Find vowel words in your pragraph.</h3>
+<form #vowelForm="ngForm" (ngSubmit)="submit(vowelForm)">
+    <div class="form-group">
+        <label for="pragraphTextarea">Pragraph</label>
+        <textarea class="form-control" id="pragraphTextarea" rows="3" required ngModel name="paragraph"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!vowelForm.form.valid">Submit</button>
+</form> 
+<table class="table" *ngIf='vowelWords.length'>
+    <thead>
+        <tr>
+            <th>Vowel Words</th>
+            <th><button (click)="taggle()">{{showCount?"sort items":"count items"}}</button></th>
+        </tr> 
+    </thead>
+    <tbody *ngIf="showCount">
+        <tr *ngFor="let entry of vowelMap | keyvalue">
+            <td>{{entry.key}}</td>
+            <td>{{entry.value}}</td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="!showCount">
+        <tr *ngFor="let word of vowelWords">
+            <td>{{word}}</td>
+        </tr>
+    </tbody>
+</table>

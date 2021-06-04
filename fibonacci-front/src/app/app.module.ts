@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { VowelsComponent } from './vowels/vowels.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VowelsComponent
   ],
   imports: [
     BrowserModule,
