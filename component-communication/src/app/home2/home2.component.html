@@ -1,0 +1,8 @@
+<h3> M2: WithIn component class we can access child propetry by @viewChild <br> 
+    but AfterViewInit runs only once, so changing values can't get, only initial values can get</h3>
+<br>
+<h3> M3: EventEmmit: get the click event, input value get by focusout event </h3>
+<cc-label2></cc-label2>
+<cc-input2></cc-input2>
+<cc-button2 (clickEmitter)="clicked = true"></cc-button2>
+<h3>{{clicked?firstName:''}}</h3>

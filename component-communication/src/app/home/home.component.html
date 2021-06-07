@@ -1,0 +1,5 @@
+<h3> M1: Direct access child property through template reference</h3>
+<cc-label ></cc-label>
+<cc-input #inputRef></cc-input>
+<cc-button #buttonRef></cc-button>
+<h3>{{buttonRef.clicked?inputRef.firstName:''}}</h3>
