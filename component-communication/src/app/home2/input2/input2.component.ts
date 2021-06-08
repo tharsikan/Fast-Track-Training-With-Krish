@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'cc-input2',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input2.component.scss'],
 })
 export class Input2Component implements OnInit {
+  @Output() firstNameEmitter = new EventEmitter();
   firstName!: string;
-  focusOutFunction(): void {
-    console.log(' focus out');
+  focusOut(): void {
+    this.firstNameEmitter.emit(this.firstName);
   }
   constructor() {}
 

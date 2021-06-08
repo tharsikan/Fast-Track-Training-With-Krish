@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  clicked!: boolean;
+  clicked!: true;
   constructor() { }
 
   ngOnInit(): void {

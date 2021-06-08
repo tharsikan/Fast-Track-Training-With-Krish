@@ -1,6 +1,4 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { Button2Component} from './button2/button2.component';
-import { Input2Component } from './input2/input2.component';
 
 @Component({
   selector: 'cc-home2',
@@ -12,7 +10,9 @@ export class Home2Component implements OnInit {
   clicked!: boolean;
   buttonClicked(value: boolean): void{
     this.clicked = value;
-    console.log(this.clicked);
+  }
+  getFirstName(value: string): void{
+    this.firstName = value;
   }
   constructor() { }
 

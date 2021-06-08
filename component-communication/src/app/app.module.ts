@@ -11,6 +11,10 @@ import { Home2Component } from './home2/home2.component';
 import { Input2Component } from './home2/input2/input2.component';
 import { Button2Component } from './home2/button2/button2.component';
 import { Label2Component } from './home2/label2/label2.component';
+import { Label3Component } from './home3/label3/label3.component';
+import { Home3Component } from './home3/home3.component';
+import { Button3Component } from './home3/button3/button3.component';
+import { Input3Component } from './home3/input3/input3.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { Label2Component } from './home2/label2/label2.component';
     Home2Component,
     Input2Component,
     Button2Component,
-    Label2Component
+    Label2Component,
+    Label3Component,
+    Home3Component,
+    Button3Component,
+    Input3Component
   ],
   imports: [
     BrowserModule,
