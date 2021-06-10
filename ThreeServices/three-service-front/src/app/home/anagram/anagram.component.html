@@ -1,14 +1,24 @@
-<h3>Check the Sentence is Anagram or not</h3>
-<form>
+<h3>Check the predicate is Anagram or not</h3>
+<form #anagramForm="ngForm" (ngSubmit)="anagramSubmit(anagramForm)">
     <div class="form-group row">
-      <label for="sentence" class="col-sm-2 col-form-label">Enter A Sentence</label>
+      <label for="subject" class="col-sm-2 col-form-label">Enter A Subject</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="sentence" placeholder="To Caluculate Number of Occurrence">
+        <input type="text" id="subject"
+         name="subject" [(ngModel)]="anagram.subject" required #subject="ngModel">
+         <div *ngIf="subject.touched && !subject.valid">please enter valid subject</div>
       </div>
     </div>
     <div class="form-group row">
+        <label for="predicate" class="col-sm-2 col-form-label">Enter A Predicate</label>
+        <div class="col-sm-4">
+          <input type="text" id="predicate"
+           name="predicate" [(ngModel)]="anagram.predicate" required #predicate="ngModel">
+           <div *ngIf="predicate.touched && !predicate.valid">please enter valid predicate</div>
+        </div>
+    </div>
+    <div class="form-group row">
       <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Find</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!anagramForm.valid">Find</button>
       </div>
     </div>
 </form>

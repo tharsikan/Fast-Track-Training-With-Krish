@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FormsModule } from '@angular/forms';
+import { AnagramComponent } from './home/anagram/anagram.component';
 
 @NgModule({
   declarations: [
@@ -13,11 +15,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavbarComponent,
     HomeComponent,
     PageNotFoundComponent,
-    routingComponents
+    routingComponents,
+    AnagramComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
