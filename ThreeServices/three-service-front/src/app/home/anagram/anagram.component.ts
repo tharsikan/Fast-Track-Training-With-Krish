@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AnagramService } from 'src/app/anagram.service';
 
-export interface Anagram{
+export interface Anagram {
   subject: string;
   predicate: string;
 }
@@ -13,15 +13,20 @@ export interface Anagram{
   styleUrls: ['./anagram.component.scss'],
 })
 export class AnagramComponent implements OnInit {
-  submited = false;
-  anagram: Anagram = {subject: '' , predicate: ''};
+  isAnagram!: boolean;
+  error!: string;
+  tempSubject!: string;
+  tempPredicate!: string;
+  anagram: Anagram = { subject: '', predicate: '' };
   anagramSubmit(anagramForm: NgForm): void {
+    this.tempSubject = this.anagram.subject;
+    this.tempPredicate = this.anagram.predicate;
     this.anagramService.getTodos(this.anagram, (data: any, error: any) => {
-      if (data) {
-        console.log(data);
+      if (data !== undefined) {
+        this.isAnagram = data;
       }
       if (error) {
-        console.log(error);
+        this.error = error;
       }
     });
   }

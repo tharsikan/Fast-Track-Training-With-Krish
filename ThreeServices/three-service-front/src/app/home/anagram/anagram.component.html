@@ -5,7 +5,7 @@
       <div class="col-sm-4">
         <input type="text" id="subject"
          name="subject" [(ngModel)]="anagram.subject" required #subject="ngModel">
-         <div *ngIf="subject.touched && !subject.valid">please enter valid subject</div>
+         <div *ngIf="subject.touched && !subject.valid" class="text-danger">subject is required!!</div>
       </div>
     </div>
     <div class="form-group row">
@@ -13,7 +13,7 @@
         <div class="col-sm-4">
           <input type="text" id="predicate"
            name="predicate" [(ngModel)]="anagram.predicate" required #predicate="ngModel">
-           <div *ngIf="predicate.touched && !predicate.valid">please enter valid predicate</div>
+           <div *ngIf="predicate.touched && !predicate.valid" class="text-danger">predicate is required!!</div>
         </div>
     </div>
     <div class="form-group row">
@@ -22,3 +22,6 @@
       </div>
     </div>
 </form>
+
+<div class="p-3 mb-2 bg-success text-white col-sm-4" *ngIf="isAnagram==true">{{tempPredicate}} is an Anagram of {{tempSubject}}</div>
+<div class="p-3 mb-2 bg-danger text-white col-sm-4" *ngIf="isAnagram==false">{{tempPredicate}} is not an Anagram of {{tempSubject}}</div>
