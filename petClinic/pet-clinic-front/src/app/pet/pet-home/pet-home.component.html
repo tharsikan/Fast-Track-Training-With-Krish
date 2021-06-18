@@ -1,0 +1,4 @@
+<p>pet-home works!</p>
+<ul class="pets" *ngIf="pets$ | async as pets">
+    <li *ngFor="let pet of pets">{{pet.name}}</li>
+</ul>
