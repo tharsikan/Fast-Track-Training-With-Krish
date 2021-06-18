@@ -6,10 +6,10 @@ import { PetService } from '../pet.service';
 @Component({
   selector: 'app-pet-create',
   templateUrl: './pet-create.component.html',
-  styleUrls: ['./pet-create.component.scss']
+  styleUrls: ['./pet-create.component.scss'],
 })
 export class PetCreateComponent implements OnInit {
-isAnagram!: boolean;
+  isAnagram!: boolean;
   error!: string;
   tempSubject!: string;
   tempPredicate!: string;
@@ -21,15 +21,14 @@ isAnagram!: boolean;
     name: '',
     age: 0,
     type: PetType.DOG,
-    breed: DogBreed.GERMAN_SHEPHERD
+    breed: DogBreed.GERMAN_SHEPHERD,
   };
-  constructor(private petService: PetService) { }
+  constructor(private petService: PetService) {}
   ngOnInit(): void {}
 
   crete(anagramForm: NgForm): void {
-    // this.tempSubject = this.pet.subject;
-    // this.tempPredicate = this.pet.predicate;
-    // this.petService.create();
+    this.petService.create(this.pet).subscribe((data) => {
+      alert('successfully created');
+    });
   }
-
 }

@@ -19,7 +19,7 @@ export class PetUpdateComponent implements OnInit {
     name: '',
     age: 0,
     type: PetType.DOG,
-    breed: DogBreed.GERMAN_SHEPHERD
+    breed: DogBreed.GERMAN_SHEPHERD,
   };
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,8 +29,10 @@ export class PetUpdateComponent implements OnInit {
       this.paramId = data.id;
     });
   }
-  updatePet(anagramForm: NgForm): void{
-
+  updatePet(anagramForm: NgForm): void {
+    this.petService.update(this.paramId, this.pet).subscribe((data) => {
+      alert('successfully upddated');
+    });
   }
   ngOnInit(): void {
     this.petService.getById(this.paramId).subscribe((data) => {

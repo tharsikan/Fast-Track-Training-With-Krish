@@ -43,8 +43,9 @@ export class PetsController {
     return this.petsServices.getPetById(id);
   }
 
-  @Put('/:id/status')
+  @Put('/:id')
   updatePet(@Param('id') id: string, @Body() petUpdateDto: PetUpdateDto) {
+    console.log('pundai' + id + petUpdateDto);
     petUpdateDto.id = id;
     return this.petsServices.updatePet(petUpdateDto);
   }
