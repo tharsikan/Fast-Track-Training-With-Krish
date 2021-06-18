@@ -31,7 +31,7 @@
         <td>{{pet.type}}</td>
         <td>{{pet.breed}}</td>
         <td><button type="button" class="btn btn-info" routerLink="/pet/update/{{pet.id}}">Edit</button></td>
-        <td><button type="button" class="btn btn-danger" (click)="delete(pet.id)">Trash</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="delete(pet.id, pet.name)">Trash</button></td>
       </tr>
     </tbody>
 </table>

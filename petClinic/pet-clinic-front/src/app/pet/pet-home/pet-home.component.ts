@@ -20,12 +20,13 @@ export class PetHomeComponent implements OnInit {
     this.pets$ = this.petService.getAll();
     this.refreshPets$.subscribe((l) => console.log(l));
   }
-  delete(id: string): void {
-    console.log('hi hello ' + id);
-    this.petService.delete(id).subscribe((data) => {
-      this.ngOnInit();
-      console.log(data);
-    });
+  delete(id: string, name: string): void {
+    if (confirm('Are you sure to delete ' + name)) {
+      this.petService.delete(id).subscribe((data) => {
+        this.ngOnInit();
+        console.log(data);
+      });
+    }
   }
   // update(id: string): void {
   //   console.log('hi hello ' + id);
