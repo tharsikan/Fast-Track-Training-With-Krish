@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CatBreed, Pet, PetType } from '../Pet.model';
+import { CatBreed, DogBreed, Pet, PetType } from '../Pet.model';
 import { PetService } from '../pet.service';
 
 @Component({
@@ -13,12 +13,15 @@ isAnagram!: boolean;
   error!: string;
   tempSubject!: string;
   tempPredicate!: string;
+  public petType: typeof PetType = PetType;
+  public dogBreed: typeof DogBreed = DogBreed;
+  public catBreed: typeof CatBreed = CatBreed;
   pet: Pet = {
     id: '',
     name: '',
     age: 0,
-    type: PetType.CAT,
-    breed: CatBreed.BIRMAN
+    type: PetType.DOG,
+    breed: DogBreed.GERMAN_SHEPHERD
   };
   constructor(private petService: PetService) { }
   ngOnInit(): void {}

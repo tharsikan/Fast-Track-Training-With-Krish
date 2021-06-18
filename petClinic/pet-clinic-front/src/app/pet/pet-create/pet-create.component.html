@@ -1,7 +1,7 @@
-<h3>Check the age is Anagram or not</h3>
+<h3>Create Pet</h3>
 <form #petForm="ngForm" (ngSubmit)="petSubmit(petForm)">
     <div class="form-group row">
-      <label for="nameField" class="col-sm-2 col-form-label">Enter A Subject</label>
+      <label for="nameField" class="col-sm-2 col-form-label">Name</label>
       <div class="col-sm-4">
         <input type="text" id="nameField"
          name="name" [(ngModel)]="pet.name" required #nameField="ngModel">
@@ -9,27 +9,48 @@
       </div>
     </div>
     <div class="form-group row">
-        <label for="age" class="col-sm-2 col-form-label">Enter A Predicate</label>
+        <label for="age" class="col-sm-2 col-form-label">Age</label>
         <div class="col-sm-4">
-          <input type="text" id="age"
+          <input type="number" id="age"
            name="age" [(ngModel)]="pet.age" required #age="ngModel">
            <div *ngIf="age.touched && !age.valid" class="text-danger">age is required!!</div>
         </div>
     </div>
     <div class="form-group row">
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
+        <label for="type" class="col-sm-2 col-form-label">Type</label>
+        <div class="col-sm-4">
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="type" name="type" [(ngModel)]="pet.type">
+            <option selected>Type</option>
+            <option [value]="petType.DOG" selected>{{petType.DOG}}</option>
+            <option [value]="petType.CAT">{{petType.CAT}}</option>
+            <option [value]="petType.OTHER">{{petType.OTHER}}</option>
+          </select>
+        </div>
     </div>
     <div class="form-group row">
+        <label for="breed" class="col-sm-2 col-form-label">Bread</label>
+        <div class="col-sm-4">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="breed" *ngIf="pet.type === petType.DOG">
+                <option [value]="dogBreed.GERMAN_SHEPHERD" selected>{{dogBreed.GERMAN_SHEPHERD}}</option>
+                <option [value]="dogBreed.BULLDOG">{{dogBreed.BULLDOG}}</option>
+                <option [value]="dogBreed.ROTTWEILER">{{dogBreed.ROTTWEILER}}</option>
+            </select>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="breed" *ngIf="pet.type === petType.CAT">
+                <option [value]="catBreed.RAGDOLL" selected>{{catBreed.RAGDOLL}}</option>
+                <option [value]="catBreed.PERSIAN_CAT">{{catBreed.PERSIAN_CAT}}</option>
+                <option [value]="catBreed.RAGDOLL">{{catBreed.RAGDOLL}}</option>
+            </select>
+        </div>
+    </div>
+    
+          
+    
+    <div class="form-group row">
       <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary" [disabled]="!petForm.valid">Find</button>
+        <button type="submit" class="btn btn-success" [disabled]="!petForm.valid">Save</button>
       </div>
     </div>
 </form>
-
+{{pet | json}}
 <div class="p-3 mb-2 bg-success text-white col-sm-4" *ngIf="isAnagram==true">{{tempPredicate}} is an Anagram of {{tempSubject}}</div>
 <div class="p-3 mb-2 bg-danger text-white col-sm-4" *ngIf="isAnagram==false">{{tempPredicate}} is not an Anagram of {{tempSubject}}</div>

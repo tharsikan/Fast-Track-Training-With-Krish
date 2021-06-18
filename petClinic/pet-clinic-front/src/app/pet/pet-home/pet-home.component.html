@@ -1,4 +1,37 @@
-<p>pet-home works!</p>
-<ul class="pets" *ngIf="pets$ | async as pets">
-    <li *ngFor="let pet of pets">{{pet.name}}</li>
-</ul>
+<div class="row">
+    <div class="col-sm-6"><h3>Pets list</h3></div>
+    <label for="name" class="col-sm-2">Search By name: </label>
+    <input class="col-sm-1" placeholder="name" id="name">
+    <div class="col-sm-1">
+      <select aria-label=".form-select-lg example" id="type" name="type" >
+        <option selected>Type</option>
+         <option [value]="petType.DOG">{{petType.DOG}}</option>
+        <option [value]="petType.CAT">{{petType.CAT}}</option>
+        <option [value]="petType.OTHER">{{petType.OTHER}}</option>
+      </select>
+    </div>
+    <button>Crete Pet</button>
+</div>
+<table class="table" *ngIf="pets$ | async as pets">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Type</th>
+        <th scope="col">Breed</th>
+        <th scope="col" colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pets">
+        <th scope="row">{{pet.id}}</th>
+        <td>{{pet.name}}</td>
+        <td>{{pet.age}}</td>
+        <td>{{pet.type}}</td>
+        <td>{{pet.breed}}</td>
+        <td><button type="button" class="btn btn-info">Edit</button></td>
+        <td><button type="button" class="btn btn-danger">Trash</button></td>
+      </tr>
+    </tbody>
+</table>

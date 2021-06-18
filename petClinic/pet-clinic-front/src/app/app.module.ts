@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CommonModule } from '@angular/common';
 import { PetHomeComponent } from './pet/pet-home/pet-home.component';
 import { FormsModule } from '@angular/forms';
+import { PetCreateComponent } from './pet/pet-create/pet-create.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NavbarComponent,
     PageNotFoundComponent,
-    PetHomeComponent
+    PetHomeComponent,
+    PetCreateComponent
   ],
   imports: [
     BrowserModule,

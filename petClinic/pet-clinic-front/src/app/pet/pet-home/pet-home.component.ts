@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Pet } from '../Pet.model';
+import { Pet, PetType } from '../Pet.model';
 import { PetService } from '../pet.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { PetService } from '../pet.service';
 export class PetHomeComponent implements OnInit {
   pets$!: Observable<Pet[]>;
   refreshPets$ = new BehaviorSubject<boolean>(true);
-
+  public petType: typeof PetType = PetType;
   constructor(public petService: PetService) {}
 
   ngOnInit(): void {
