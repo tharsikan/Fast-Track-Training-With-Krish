@@ -5,12 +5,10 @@ import { PetRoutingModule } from './pet-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PetDetailsComponent } from './pet-details/pet-details.component';
-import { PetUpdateComponent } from './pet-update/pet-update.component';
 
 @NgModule({
   declarations: [
-    PetDetailsComponent,
-    PetUpdateComponent
+    PetDetailsComponent
   ],
   imports: [
     CommonModule,

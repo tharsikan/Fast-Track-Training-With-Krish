@@ -10,6 +10,7 @@ import { PetService } from '../pet.service';
 })
 export class PetHomeComponent implements OnInit {
   pets$!: Observable<Pet[]>;
+  pet$!: Observable<Pet>;
   refreshPets$ = new BehaviorSubject<boolean>(true);
   public petType: typeof PetType = PetType;
   constructor(public petService: PetService) {}
@@ -17,6 +18,19 @@ export class PetHomeComponent implements OnInit {
   ngOnInit(): void {
     this.refreshPets$.next(false);
     this.pets$ = this.petService.getAll();
-    this.refreshPets$.subscribe(l => console.log(l));
+    this.refreshPets$.subscribe((l) => console.log(l));
   }
+  delete(id: string): void {
+    console.log('hi hello ' + id);
+    this.petService.delete(id).subscribe((data) => {
+      this.ngOnInit();
+      console.log(data);
+    });
+  }
+  // update(id: string): void {
+  //   console.log('hi hello ' + id);
+  //   this.petService.getById(id).subscribe((data) => {
+  //     console.log(data);
+  //   });
+  // }
 }

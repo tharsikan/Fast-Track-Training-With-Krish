@@ -26,7 +26,7 @@ isAnagram!: boolean;
   constructor(private petService: PetService) { }
   ngOnInit(): void {}
 
-  petSubmit(anagramForm: NgForm): void {
+  crete(anagramForm: NgForm): void {
     // this.tempSubject = this.pet.subject;
     // this.tempPredicate = this.pet.predicate;
     // this.petService.create();

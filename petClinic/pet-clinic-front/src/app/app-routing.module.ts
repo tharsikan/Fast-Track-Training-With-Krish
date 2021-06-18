@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'pets', component: PetHomeComponent },
   { path: 'pet/create', component: PetCreateComponent },
   { path: 'pet/details', component: PetDetailsComponent },
-  { path: 'pet/update', component: PetUpdateComponent },
+  { path: 'pet/update/:id', component: PetUpdateComponent },
   { path: 'clients', component: ClientHomeComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

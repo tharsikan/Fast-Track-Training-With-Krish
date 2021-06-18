@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { PetHomeComponent } from './pet/pet-home/pet-home.component';
 import { FormsModule } from '@angular/forms';
 import { PetCreateComponent } from './pet/pet-create/pet-create.component';
+import { PetUpdateComponent } from './pet/pet-update/pet-update.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PetCreateComponent } from './pet/pet-create/pet-create.component';
     NavbarComponent,
     PageNotFoundComponent,
     PetHomeComponent,
-    PetCreateComponent
+    PetCreateComponent,
+    PetUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <h3>Create Pet</h3>
-<form #petForm="ngForm" (ngSubmit)="petSubmit(petForm)">
+<form #petForm="ngForm" (ngSubmit)="crete(petForm)">
     <div class="form-group row">
       <label for="nameField" class="col-sm-2 col-form-label">Name</label>
       <div class="col-sm-4">
@@ -21,7 +21,7 @@
         <div class="col-sm-4">
           <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="type" name="type" [(ngModel)]="pet.type">
             <option selected>Type</option>
-            <option [value]="petType.DOG" selected>{{petType.DOG}}</option>
+            <option [value]="petType.DOG">{{petType.DOG}}</option>
             <option [value]="petType.CAT">{{petType.CAT}}</option>
             <option [value]="petType.OTHER">{{petType.OTHER}}</option>
           </select>
@@ -30,15 +30,15 @@
     <div class="form-group row">
         <label for="breed" class="col-sm-2 col-form-label">Bread</label>
         <div class="col-sm-4">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="breed" *ngIf="pet.type === petType.DOG">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="breed" *ngIf="pet.type === petType.DOG"  name="breed" [(ngModel)]="pet.breed">
                 <option [value]="dogBreed.GERMAN_SHEPHERD" selected>{{dogBreed.GERMAN_SHEPHERD}}</option>
                 <option [value]="dogBreed.BULLDOG">{{dogBreed.BULLDOG}}</option>
                 <option [value]="dogBreed.ROTTWEILER">{{dogBreed.ROTTWEILER}}</option>
             </select>
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="breed" *ngIf="pet.type === petType.CAT">
-                <option [value]="catBreed.RAGDOLL" selected>{{catBreed.RAGDOLL}}</option>
-                <option [value]="catBreed.PERSIAN_CAT">{{catBreed.PERSIAN_CAT}}</option>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="breed" *ngIf="pet.type === petType.CAT" name="breed" [(ngModel)]="pet.breed">
                 <option [value]="catBreed.RAGDOLL">{{catBreed.RAGDOLL}}</option>
+                <option [value]="catBreed.PERSIAN_CAT">{{catBreed.PERSIAN_CAT}}</option>
+                <option [value]="catBreed.BIRMAN">{{catBreed.BIRMAN}}</option>
             </select>
         </div>
     </div>
@@ -52,5 +52,3 @@
     </div>
 </form>
 {{pet | json}}
-<div class="p-3 mb-2 bg-success text-white col-sm-4" *ngIf="isAnagram==true">{{tempPredicate}} is an Anagram of {{tempSubject}}</div>
-<div class="p-3 mb-2 bg-danger text-white col-sm-4" *ngIf="isAnagram==false">{{tempPredicate}} is not an Anagram of {{tempSubject}}</div>

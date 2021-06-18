@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-6"><h3>Pets list</h3></div>
     <label for="name" class="col-sm-2">Search By name: </label>
-    <input class="col-sm-1" placeholder="name" id="name">
+    <input class="col-sm-1 input-sm" type="text" placeholder=".form-control-sm">
     <div class="col-sm-1">
       <select aria-label=".form-select-lg example" id="type" name="type" >
         <option selected>Type</option>
@@ -10,7 +10,7 @@
         <option [value]="petType.OTHER">{{petType.OTHER}}</option>
       </select>
     </div>
-    <button>Crete Pet</button>
+    <button type="button" class="col-sm-1 btn btn-success" routerLink="/pet/create">Create Pet</button>
 </div>
 <table class="table" *ngIf="pets$ | async as pets">
     <thead class="thead-dark">
@@ -30,8 +30,8 @@
         <td>{{pet.age}}</td>
         <td>{{pet.type}}</td>
         <td>{{pet.breed}}</td>
-        <td><button type="button" class="btn btn-info">Edit</button></td>
-        <td><button type="button" class="btn btn-danger">Trash</button></td>
+        <td><button type="button" class="btn btn-info" routerLink="/pet/update/{{pet.id}}">Edit</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="delete(pet.id)">Trash</button></td>
       </tr>
     </tbody>
 </table>

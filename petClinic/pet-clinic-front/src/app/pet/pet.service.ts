@@ -26,7 +26,7 @@ export class PetService {
       )
       .pipe(catchError(this.errorHandler));
   }
-  getById(id: number): Observable<Pet> {
+  getById(id: string): Observable<Pet> {
     return this.httpClient
       .get<Pet>(this.apiServer + '/pets/' + id)
       .pipe(catchError(this.errorHandler));
@@ -38,7 +38,7 @@ export class PetService {
       .pipe(catchError(this.errorHandler));
   }
 
-  update(id: number, pet: Pet): Observable<Pet> {
+  update(id: string, pet: Pet): Observable<Pet> {
     return this.httpClient
       .put<Pet>(
         this.apiServer + '/pets/' + id,
@@ -47,7 +47,7 @@ export class PetService {
       )
       .pipe(catchError(this.errorHandler));
   }
-  delete(id: number) {
+  delete(id: string) {
     return this.httpClient
       .delete<Pet>(this.apiServer + '/pets/' + id, this.httpOptions)
       .pipe(catchError(this.errorHandler));
