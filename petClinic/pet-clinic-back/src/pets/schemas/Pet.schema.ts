@@ -1,13 +1,14 @@
-import { Prop } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { CatBreed, DogBreed, PetType } from '../Pet.enum';
+import { CatBreed, DogBreed, PetType } from '../enums/pet.enum';
 
-export type EmployeeDocument = Pet & Document;
+export type PetDocument = Pet & Document;
 
+@Schema()
 export class Pet {
   @Prop()
   id: string;
-  @Prop()
+  @Prop({ required: true })
   name: string;
   @Prop()
   age: number;
@@ -16,3 +17,5 @@ export class Pet {
   @Prop()
   breed: CatBreed | DogBreed;
 }
+
+export const PetSchema = SchemaFactory.createForClass(Pet);
